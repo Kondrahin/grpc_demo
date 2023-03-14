@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package grpcdemo;
+
+service RouteDemo {
+  rpc GetItem(ItemId) returns (Item);
+
+  rpc ListItems(ListItemsPagination) returns (ListItemsSchema);
+
+  rpc CreateItem(CreateItemSchema) returns (Item);
+
+  rpc UpdateItem(UpdateItemSchema) returns (Item);
+
+  rpc DeleteItem(ItemId) returns (Empty);
+}
+
+message Empty {
+
+}
+
+message CreateItemSchema {
+  string title = 1;
+}
+
+message UpdateItemSchema {
+  string id = 1;
+  string title = 2;
+}
+
+message ItemId {
+  string id = 1;
+}
+
+message ListItemsPagination {
+  int32 page = 1;
+  int32 page_length = 2;
+}
+
+message ListItemsSchema {
+  repeated Item items = 1;
+}
+
+message Item {
+  string id = 1;
+  string title = 2;
+  string created_at = 3;
+}

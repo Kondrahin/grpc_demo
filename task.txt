@@ -1,0 +1,9 @@
+Using grpc, create an API to query a database/storage of your choice (SQL, Redis, etc.). API should have the following methods:
+get item by id
+put item
+delete item by id
+get many items (with paging - you provide a page number and page length)
+The API code should be generated from a proto file, you should be able to demonstrate querying this API from another application.
+Golang is not mandatory for this task.
+Needed: GitHub repo with the applications, description of reproducible steps. (0.5 points)
+
